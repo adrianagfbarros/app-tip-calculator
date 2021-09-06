@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+<body>
+
+  <header>
+    <img src="images/logo.svg" alt="Logo">
+  </header>
+  
+  <main>
+    
+    <section>
+  
+      <label for="bill"><h2>Bill</h2></label><br>
+      <input onblur="getAmount()" type="text" id="tipBill" name="bill" placeholder="Ex. 120.50"><br>
+
+      <h2>Select Tip %</h2>
+      <div class="tip-percentage-container">
+        <div onclick="getPercent(0.05)" class="tip-percentage">5%</div>
+        <div class="tip-percentage">10%</div>
+        <div class="tip-percentage">15%</div>
+        <div class="tip-percentage">25%</div>
+        <div class="tip-percentage">50%</div>
+        <div class="custom-tip-percentage"><button>Custom</button></div>
+      </div>
+
+      <label for="num-people"><h2>Number of People</h2></label><br>
+      <input type="number" min="1" id="num-people" name="num-people" required >
+      
+    </section>
+    
+    <aside>
+
+      <div id="result-container">
+        <div class="row">
+          <h2>Tip Amount<br><span>/ person</span></h2>
+          <h3 id="tip-amount">$ 0.00</h3>
+        </div>
+        <div class="row">
+          <h2>Total<br><span>/ person</span></h2>
+          <h3>$ 0.00</h3>
+        </div>
+      </div>
+      <button type="reset">Reset</button>
+
+    </aside>
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Adriana Barros</a>.
+  </div>
+
+  <script>
+    
+    function getAmount() {
+      let b = document.getElementById('tipBill').value
+      if (b !== "") {
+       b = parseFloat(b);
+       return b;
+      }
+      
+    } 
+
+    console.log(getAmount());
+
+  </script>
+</body>
+</html>
